@@ -5,7 +5,9 @@ import java.util.Arrays;
 import java.util.HashMap; 
 
 public class fightEngine {
-  
+      //setup
+    Scanner imputCheck = new Scanner(System.in);
+      //let's get fighting
       static int[] enemyFight /* output an int array for the fight rewards */ (int enemyType, int[] playerInfo, int currentLevel) {
           //enemy setup
           String[][] weakEnemyList = {{"Test Enemy", "t", "10", "2", /* stats: HP, STR */ "Dun dun dun! A test enemy approaches!", "The test enemy is chilling.", "Text", "50", "0", "The test enemy is preparing something...", "And nothing happened!" /* Special ability stuff: Whether they have one/type, what type of effect (in this case nothing happens), a chance to occur, & prepare + execute texts.*/}};
@@ -14,13 +16,16 @@ public class fightEngine {
           int enemyNumber = 0;
           //setup enemy stats
           int enemyHealth;
+          int enemyMaxHealth;
           String enemyIcon;
           
           if (enemyType == 0) {
                 enemyHealth = Integer.parseInt(weakEnemyList[enemyNumber][3]);
+                enemyMaxHealth = enemyHealth;
                 enemyIcon = weakEnemyList[enemyNumber][1];
           } else {
                 enemyHealth = Integer.parseInt(strongEnemyList[enemyNumber][3]);
+                enemyMaxHealth = enemyHealth;
                 enemyIcon = strongEnemyList[enemyNumber][1];
             }
           
@@ -30,7 +35,9 @@ public class fightEngine {
           
           while ((playerInfo[5] > 1)||(enemyHealth > 1)) {
             //draw screen
+            System.out.println("Lvl " + currentLevel + " " + weakEnemyList[enemyNumber][0] + " - HP " + enemyHealth + "/" + enemyMaxHealth);
             System.out.println("b/..........." + enemyIcon);
+
             System.out.println("Lvl " + playerLevel + " " + playerName + " - HP " + playerHealth + "/" + maxHealth);
 
             String playerAction = imputCheck.nextLine();
