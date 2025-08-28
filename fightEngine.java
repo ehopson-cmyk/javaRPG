@@ -1,5 +1,10 @@
-public class fightEngine {
 
+import java.util.Scanner;
+import java.util.Random;
+import java.util.Arrays;
+import java.util.HashMap; 
+
+public class fightEngine {
   
       static int[] enemyFight /* output an int array for the fight rewards */ (int enemyType, int[] playerInfo, int currentLevel) {
           //enemy setup
@@ -34,4 +39,4 @@ public class fightEngine {
           
           return fightRewards;
         }
- 	
+}
