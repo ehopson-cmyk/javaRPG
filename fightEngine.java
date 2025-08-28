@@ -31,6 +31,15 @@ public class fightEngine {
           while ((playerInfo[5] > 1)||(enemyHealth > 1)) {
             //draw screen
             System.out.println("b/..........." + enemyIcon);
+            System.out.println("Lvl " + playerLevel + " " + playerName + " - HP " + playerHealth + "/" + maxHealth);
+
+            String playerAction = imputCheck.nextLine();
+            //wait 'till the player types (old bug from E.T.H.)
+            final String blank = "";
+            while (playerAction.equals(blank)) {
+                playerAction = imputCheck.nextLine();
+                
+             }
           }
           
           //fight's over
