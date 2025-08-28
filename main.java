@@ -58,6 +58,7 @@ return coordinates;
     Scanner imputCheck = new Scanner(System.in);
     Random rand = new Random();
     HashMap<String,Integer> itemCaller = new HashMap<String,Integer>();
+    fightEngine engine = new fightEngine();
     //variables
     int maxHealth = 30; //!base! health
     int playerHealth = 30; 
@@ -390,7 +391,7 @@ else if (playerAction.equals(west)) {
     mazeX = mazeX - 1;
   } else if (maze[mazePosition].charAt(mazeX - 1) == weakEnemy) {
     //ooh, an enemy
-    int[] fightRewards = enemyFight(0, playerInfo, 1);
+    int[] fightRewards = engine.enemyFight(0, playerInfo, 1);
   }
   else {
     System.out.println("Bang! You ram your head into a wall. You should have seen that coming.");
